@@ -1,0 +1,95 @@
+/* Base visual (tokens de cor e tipografia):
+   Plus Jakarta Sans, fundo slate claro, cartões brancos com borda fina e canto de 12px, botões em pílula,
+   primário azul-marinho e destaque lilás. */
+
+:root {
+  --color-bg: #f8fafc;          /* hsl(210 40% 98%) */
+  --color-surface: #ffffff;
+  --color-text: #0f172a;        /* foreground hsl(222 47% 11%) */
+  --color-body: #334155;        /* body hsl(215 25% 27%) */
+  --color-muted: #64748b;       /* muted-foreground hsl(215 16% 47%) */
+  --color-divider: #e2e8f0;     /* border hsl(214 32% 91%) */
+  --color-primary: #0f172a;     /* botão principal */
+  --color-on-primary: #ffffff;
+
+  --color-accent: #f3e8ff;      /* accent hsl(269 100% 95%) */
+  --color-accent-fg: #5b2a86;   /* accent-foreground hsl(273 51% 32%) */
+  --color-accent-strong: #8a22cf; /* accent-strong hsl(272 72% 47%) */
+
+  --perigo: #dc2626; --perigo-100: #fef2f2; --perigo-200: #fecaca; --perigo-700: #b91c1c; --perigo-800: #991b1b;
+
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-500: #94a3b8;
+
+  --font-body: "Plus Jakarta Sans", Manrope, ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.05);
+  --shadow-lg: 0 12px 32px rgb(15 23 42 / 0.14);
+  --foco: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-accent-strong);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font-body); font-size: 14px; line-height: 1.5; background: var(--color-bg); color: var(--color-text);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; margin: 0; color: var(--color-text); }
+p { margin: 0; }
+a { color: var(--color-accent-strong); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+:focus { outline: none; }
+:focus-visible { outline: none; box-shadow: var(--foco); }
+::selection { background: color-mix(in srgb, var(--color-accent-strong) 22%, transparent); }
+
+/* — botões (pílula) — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap;
+  height: 40px; padding: 0 16px; border-radius: var(--radius-pill); border: 1px solid transparent;
+  font: inherit; font-size: 14px; font-weight: 500; color: var(--color-text); background: transparent;
+  cursor: pointer; text-decoration: none; transition: background-color .15s, color .15s, border-color .15s;
+}
+.btn svg { display: block; flex-shrink: 0; }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+.btn-primary { background: var(--color-primary); color: var(--color-on-primary); box-shadow: var(--shadow-sm); }
+.btn-primary:hover { background: color-mix(in srgb, var(--color-primary) 90%, transparent); }
+.btn-secondary { border-color: var(--color-divider); background: var(--color-surface); }
+.btn-secondary:hover { background: var(--color-bg); }
+.btn-ghost { color: var(--color-muted); }
+.btn-ghost:hover { background: var(--color-accent); color: var(--color-accent-fg); }
+.btn-icon { width: 40px; padding: 0; }
+
+/* — campos — */
+.field > label { display: block; font-size: 12px; font-weight: 500; margin-bottom: 4px; color: var(--color-muted); }
+.input {
+  width: 100%; height: 40px; padding: 0 12px; font: inherit; font-size: 14px; color: var(--color-text);
+  background: var(--color-surface); border: 1px solid var(--color-divider); border-radius: var(--radius-lg);
+  transition: border-color .15s, box-shadow .15s;
+}
+.input::placeholder { color: var(--color-muted); }
+.input:focus-visible { box-shadow: 0 0 0 2px var(--color-accent-strong); border-color: transparent; }
+.input:disabled { opacity: 0.5; cursor: not-allowed; }
+select.input { padding-right: 32px; }
+
+/* — badges (pílula) — */
+.tag { display: inline-flex; align-items: center; padding: 3px 10px; font-size: 12px; font-weight: 500; border-radius: var(--radius-pill); }
+.tag-accent { background: var(--color-accent); color: var(--color-accent-fg); }
+.tag-neutral { background: var(--color-bg); color: var(--color-muted); border: 1px solid var(--color-divider); }
+.tag-perigo { background: var(--perigo-100); color: var(--perigo-800); border: 1px solid var(--perigo-200); }
+
+/* — tabela — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th { text-align: left; font-size: 12px; font-weight: 600; color: var(--color-muted); background: var(--color-bg); padding: 12px 16px; border-bottom: 1px solid var(--color-divider); }
+.table td { padding: 14px 16px; border-bottom: 1px solid color-mix(in srgb, var(--color-divider) 60%, transparent); color: var(--color-body); }
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-bg) 60%, transparent); }
+
+/* — diálogo — */
+.dialog-backdrop { position: fixed; inset: 0; display: grid; place-items: center; padding: 16px; background: rgb(15 23 42 / 0.45); }
+.dialog { width: min(480px, 100%); display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: var(--radius-lg);
+  background: var(--color-surface); border: 1px solid var(--color-divider); box-shadow: var(--shadow-lg); }
+.dialog-title { font-size: 18px; font-weight: 700; letter-spacing: -0.015em; }
+.dialog-body { font-size: 14px; color: var(--color-body); }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }

@@ -1,0 +1,10 @@
+{
+  "name": "erp-import-rpa",
+  "private": true,
+  "type": "module",
+  "description": "Robô de tela que importa a planilha de movimento contábil no ERP (app Java servido no navegador)",
+  "dependencies": {
+    "playwright": "^1.58.0",
+    "pngjs": "^7.0.0"
+  }
+}

@@ -1,0 +1,27 @@
+# planilhas do cliente e extrações (dados financeiros — não versionar)
+*.xlsx
+*.XLSX
+*.xls
+# runtime
+.venv/
+app/trabalhos/
+app/falhas/
+app/__pycache__/
+web/node_modules/
+web/dist/
+
+# RPA ERP: credenciais e artefatos de tela
+rpa/.env
+rpa/artifacts/
+rpa/downloads/
+rpa/node_modules/
+
+# portal do robô: credencial, arquivos gerados e build
+portal/.env
+portal/arquivos/
+portal/web/node_modules/
+portal/web/dist/
+portal/__pycache__/
+portal/api/__pycache__/
+.env
+sap/saida/

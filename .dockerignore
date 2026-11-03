@@ -1,0 +1,9 @@
+*
+!app/app.py
+!app/conversor.py
+!app/tabelas.py
+!app/xlsx_rapido.py
+!web/
+web/node_modules
+web/dist
+!requirements-prod.txt

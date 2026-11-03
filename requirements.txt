@@ -1,0 +1,10 @@
+Flask==3.1.3
+lxml==6.1.3
+openpyxl==3.1.5
+pillow==12.3.0
+playwright==1.58.0
+psycopg==3.2.10
+psycopg-binary==3.2.10
+python-calamine==0.8.2
+minio==7.2.20
+# opcional, só para a extração por RFC (precisa do SAP NW RFC SDK): pyrfc
